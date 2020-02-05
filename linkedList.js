@@ -51,7 +51,20 @@ MyLinkedList.prototype.addAtHead = function(val) {
  * @return {void}
  */
 MyLinkedList.prototype.addAtTail = function(val) {
+  const newNode = new Node(val);
+  let temp = this.head;
 
+  if (this.head === null) {
+    this.head = newNode;
+  } else {
+    while (temp.next !== null) {
+      temp = temp.next;
+    }
+
+    temp.next = newNode;
+  }
+
+  this.size++;
 };
 
 /**
