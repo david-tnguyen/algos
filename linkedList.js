@@ -39,9 +39,10 @@ MyLinkedList.prototype.get = function(index) {
  * @return {void}
  */
 MyLinkedList.prototype.addAtHead = function(val) {
-
-
-
+  const newNode = new Node(val);
+  newNode.next = this.head;
+  this.head = newNode;
+  this.size++;
 };
 
 /**
